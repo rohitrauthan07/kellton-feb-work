@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>DOM-ass1</title>
+    <script>
+        function insRow() {
+            var x = document.getElementById('POITable').insertRow(1);
+            var y = document.getElementById('POITable').insertRow(2);
+            var Firstname = x.insertCell(0);
+            var  Lastname= x.insertCell(1);
+            var email = x.insertCell(2);
+            var id = x.insertCell(3);
+            var PhoneNumber = x.insertCell(4);
+            var Designation = x.insertCell(5);
+            var DOB = x.insertCell(6);
+            Firstname.innerHTML = "Rohit";
+            Lastname.innerHTML = "Rauthan";
+            email.innerHTML = "rohit07rsr";
+            id.innerHTML = "6184";
+            PhoneNumber.innerHTML = "100";
+            Designation.innerHTML = "SE";
+            DOB.innerHTML = "NEW CELL1";
+        }
+    </script>
+</head>
+<body>
+    <div id="POItablediv">
+        <input type="button" id="addmorePOIbutton" value="Add More POIs" onclick="insRow()" />
+        <table id="POITable">
+            <tr>
+               
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>Email</td>
+                <td>Id</td>
+                <td>PhoneNumber</td>
+                <td>Designation</td>
+                <td>DOB</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
+
+<style>
+    table {
+        width: 70%;
+        font: 17px Calibri;
+    }
+
+    table, th, td {
+        border: solid 1px #DDD;
+        border-collapse: collapse;
+        padding: 2px 3px;
+        text-align: center;
+    }
+</style>
