@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Table</title>
+
+</head>
+<body>
+    <input type="button" onclick="createTable()" value="CREATE" />
+    <p id="showData"></p>
+</body>
+
+<script>
+    function createTable() {
+        var JSONData = [
+            {
+                "firstName": "rohit",
+                "lastName": "singh",
+                "email": "rohitasd@gmail.com",
+                "id": 6184,
+                "phoneNumber": 46454545,
+                "designation": "Sw Trainee",
+                "DOB": "07-2-97",
+            },
+            {
+                "firstName": "Abhishek",
+                "lastName": "singh",
+                "email": "abhi@gmail.com",
+                "id": 4150,
+                "phoneNumber": 78555519,
+                "designation": "Sw Trainee",
+                "DOB": "26-3-97",
+            },
+            {
+                "firstName": "Shivam",
+                "lastName": "Singh",
+                "email": "shivamsingh@gmail.com",
+                "id": 7456,
+                "phoneNumber": 87553268,
+                "designation": "Sw Trainee",
+                "DOB": "4-9-95",
+            },
+            {
+                "firstName": "sapna",
+                "lastName": "negi",
+                "email": "sapnanegi@gmail.com",
+                "id": 2311,
+                "phoneNumber": 5456561,
+                "designation": "Sw Trainee",
+                "DOB": "30-9-96",
+            },
+
+            {
+                "firstName": "Naman",
+                "lastName": "Khetawat",
+                "email": "naman.khetawat@gmail.com",
+                "id": 6567,
+                "phoneNumber": 7343554509,
+                "designation": "Sw Trainee",
+                "DOB": "21-10-96",
+            },
+        ]
+
+        var headerData = [];
+        for (var index = 0; index < JSONData.length; index++) {
+            for (var key in JSONData[index]) {
+                if (headerData.indexOf(key) === -1) {
+                    headerData.push(key);
+                }
+            }
+        }
+
+        var table = document.createElement("table");
+
+        var tr = document.createElement("tr");
+        table.appendChild(tr)
+
+        for (var index = 0; index < headerData.length; index++) {
+            var th = document.createElement("th");
+            th.innerHTML = headerData[index];
+            tr.appendChild(th);
+        }
+
+        for (var index = 0; index < JSONData.length; index++) {
+
+            tr = document.createElement("tr");
+            table.appendChild(tr);
+
+            for (var index1 = 0; index1 < headerData.length; index1++) {
+                var tableData = document.createElement("td");
+                tr.appendChild(tableData)
+                tableData.innerHTML = JSONData[index][headerData[index1]];
+            }
+        }
+
+        var divContainer = document.getElementById("showData");
+        divContainer.innerHTML = "";
+        divContainer.appendChild(table);
+
+    }
+</script>
+</html>
